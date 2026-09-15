@@ -1,0 +1,1 @@
+skills/bergamota-mode/SKILL.md

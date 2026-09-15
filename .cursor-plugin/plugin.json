@@ -1,0 +1,28 @@
+{
+  "name": "bergamota-mode",
+  "displayName": "Bergamota",
+  "version": "1.0.0",
+  "description": "Bergamota default agent conventions: ctx history before acting, surgical diffs, explicit git consent, planning before large builds, and evidence-based verification.",
+  "author": {
+    "name": "Marcelo Barella",
+    "email": "marcelo.mbarella27@gmail.com"
+  },
+  "homepage": "https://bergamota.dev",
+  "repository": "https://github.com/Marcelo-Barella/bergamota-mode",
+  "license": "MIT",
+  "keywords": [
+    "bergamota",
+    "agent-style",
+    "workflow",
+    "custom-mode",
+    "skills"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "workflow",
+    "agent-style",
+    "custom-mode"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": "./skills/"
+}
