@@ -19,7 +19,7 @@ Operational defaults for the user. Lighter than **poteto-mode**; attach **poteto
 
 ## Prior agent history (ctx)
 
-**Default first move on non-trivial work:** search local coding-agent history with **ctx** before planning, implementing, debugging, or answering from memory. Follow `~/.cursor/skills/ctx-agent-history-search/SKILL.md` in full (CLI `ctx` and/or MCP `user-ctx`).
+**Default first move on non-trivial work:** search local coding-agent history with **ctx** before planning, implementing, debugging, or answering from memory. Follow the bundled **ctx-agent-history-search** skill in full (CLI `ctx` and/or MCP `ctx` / `user-ctx`).
 
 - **When (almost always):** continuing a project or feature; bugs and regressions; "why / how did we…"; prior decisions, attempts, failures, commands, or file touch history; planning or brainstorming that may reuse past choices; anything where another session may already hold the answer.
 - **How:** read the ctx skill, then run several targeted searches — vary wording, paths, error text, branch/feature names. Prefer `ctx search` / MCP `search`; narrow with `--workspace`, `--file`, `--since`, `--provider`, `--session`. Use `--include-subagents` when reviews, implementation attempts, or failure traces may live in delegated sessions. Inspect hits with `show_event` / `show_session` before relying on them. Use `ctx sql` only when search cannot express the question.
@@ -30,7 +30,7 @@ Operational defaults for the user. Lighter than **poteto-mode**; attach **poteto
 ## Code discipline
 
 - **Surgical diffs only.** Smallest change that solves the request. No drive-by refactors, unrelated cleanup, or scope expansion.
-- **Anti-slop.** Follow repo-root `CLAUDE.md` when present. For merges they may invoke **anti-slop** nuclear mode (`~/.cursor/skills/anti-slop/`). No narrating comments, no one-caller wrappers, no debug instrumentation left behind.
+- **Anti-slop.** Follow repo-root `CLAUDE.md` when present. For merges they may invoke **anti-slop** nuclear mode (bundled skill). No narrating comments, no one-caller wrappers, no debug instrumentation left behind.
 - **Implement exactly what was asked.** No unrequested features, tests, docs, or libraries.
 - **Portuguese in code, English to the user.** Identifiers and product UI copy in Portuguese unless the project dictates otherwise. Chat replies in English unless they say `reply in <language>`.
 - **Follow repo conventions.** Read `{repo}/AGENTS.md` and `.cursor/rules/` before editing. Match existing patterns (UI parity, service thickness, naming) instead of inventing parallel structures.
@@ -82,5 +82,6 @@ Operational defaults for the user. Lighter than **poteto-mode**; attach **poteto
 ## Memory and skills
 
 - User-level: `~/AGENTS.md`. Per-repo: `{repo}/AGENTS.md`.
-- **ctx first:** `ctx-agent-history-search` (`~/.cursor/skills/ctx-agent-history-search/SKILL.md`) — extensive use is mandatory under Bergamota; MCP server `user-ctx` is an equivalent interface.
-- **Related skills:** poteto-mode, planning, subagent-build-plan, debugger, unslop, anti-slop. Prefer path references over inlined copies.
+- **ctx first:** bundled **ctx-agent-history-search** — extensive use is mandatory under Bergamota; MCP `ctx` (plugin) or `user-ctx` (user MCP) is an equivalent interface.
+- **Bundled skills:** planning, subagent-build-plan, debugger, unslop, anti-slop, ctx-agent-history-search. Read the matching `skills/<name>/SKILL.md` in this plugin.
+- **External:** **poteto-mode** (pstack) only when attached. Superpowers **brainstorming** and **using-git-worktrees** stay in the Superpowers plugin.

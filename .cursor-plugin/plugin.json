@@ -1,8 +1,8 @@
 {
   "name": "bergamota-mode",
   "displayName": "Bergamota",
-  "version": "1.0.0",
-  "description": "Bergamota default agent conventions: ctx history before acting, surgical diffs, explicit git consent, planning before large builds, and evidence-based verification.",
+  "version": "1.1.0",
+  "description": "Bergamota custom mode plus bundled planning, debugger, anti-slop, unslop, subagent-build-plan, ctx history search, and the ctx MCP.",
   "author": {
     "name": "Marcelo Barella",
     "email": "marcelo.mbarella27@gmail.com"
@@ -15,7 +15,10 @@
     "agent-style",
     "workflow",
     "custom-mode",
-    "skills"
+    "skills",
+    "ctx",
+    "planning",
+    "debugger"
   ],
   "category": "developer-tools",
   "tags": [
@@ -24,5 +27,6 @@
     "custom-mode"
   ],
   "logo": "assets/logo.svg",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
 }

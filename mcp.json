@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ctx": {
+      "type": "stdio",
+      "command": "ctx",
+      "args": ["mcp", "serve"]
+    }
+  }
+}

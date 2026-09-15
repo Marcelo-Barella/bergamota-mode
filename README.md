@@ -1,16 +1,25 @@
 # Bergamota
 
-Cursor plugin that ships the **Bergamota** custom mode: default agent conventions for surgical diffs, ctx history search before acting, explicit git consent, planning before large builds, and evidence-based verification.
+Cursor plugin that ships the **Bergamota** custom mode and the skills it depends on: ctx history search, planning, plan execution, debugger, anti-slop, unslop, and the **ctx** MCP.
 
-Lighter than **poteto-mode**. Attach both when you want pstack rigor on top.
+Lighter than **poteto-mode**. Attach pstack when you want that rigor on top. Superpowers **brainstorming** and **using-git-worktrees** stay in the Superpowers plugin (not copied here).
 
 ## What's inside
 
 | Component | Path |
 |-----------|------|
-| Custom mode / skill | `skills/bergamota-mode/` |
+| Custom mode | `skills/bergamota-mode/` |
+| ctx history search | `skills/ctx-agent-history-search/` |
+| Planning | `skills/planning/` |
+| Plan execution | `skills/subagent-build-plan/` |
+| Debugger | `skills/debugger/` |
+| Anti-slop | `skills/anti-slop/` |
+| Unslop | `skills/unslop/` |
+| ctx MCP | `mcp.json` (`ctx mcp serve`) |
 
 Requires Cursor **custom modes** (`glass_custom_modes`) to appear in the mode picker. Without that gate it still loads as a skill (`/bergamota-mode`).
+
+**ctx MCP** needs the `ctx` CLI on PATH (`curl -fsSL https://ctx.rs/install | sh`). First-party Cursor MCPs (`cursor-app-control`, browser) are not bundled.
 
 ## Install
 
@@ -37,6 +46,11 @@ Then **Developer: Reload Window**. Confirm **bergamota-mode** under Settings →
 
 ```text
 /bergamota-mode
+/planning
+/subagent-build-plan
+/debugger
+/anti-slop
+/unslop
 ```
 
 Or pick **Bergamota** from the custom modes tray.
@@ -46,16 +60,24 @@ Or pick **Bergamota** from the custom modes tray.
 ```text
 bergamota-mode/
 ├── .cursor-plugin/plugin.json
+├── mcp.json
 ├── assets/logo.svg
-├── skills/bergamota-mode/
-│   └── SKILL.md
+├── skills/
+│   ├── bergamota-mode/
+│   ├── ctx-agent-history-search/
+│   ├── planning/
+│   ├── subagent-build-plan/
+│   ├── debugger/
+│   ├── anti-slop/
+│   └── unslop/
 ├── LICENSE
+├── NOTICE
 └── README.md
 ```
 
 ## License
 
-MIT. See [LICENSE](./LICENSE).
+MIT. See [LICENSE](./LICENSE) and [NOTICE](./NOTICE).
 
 ## Author
 
